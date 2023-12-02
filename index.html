@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <title>Pakistani - Advent of Code - Leaderboard</title>
     <meta name="next-head-count" content="4" />
     <link
@@ -94,25 +94,35 @@
             </tr>
           </thead>
           <tbody>
+            <!-- <tr><td>0</td><td>xiaowuc1</td><td>4 ⭐</td><td>471</td><td>356</td></tr>
             <tr><td>0</td><td>xiaowuc1</td><td>4 ⭐</td><td>471</td><td>356</td></tr>
-            <tr><td>0</td><td>xiaowuc1</td><td>4 ⭐</td><td>471</td><td>356</td></tr>
-            <tr><td>0</td><td>xiaowuc1</td><td>4 ⭐</td><td>471</td><td>356</td></tr>
+            <tr><td>0</td><td>xiaowuc1</td><td>4 ⭐</td><td>471</td><td>356</td></tr> -->
 
           </tbody>
         </table>
       </div>
     </div>
-    <script id="__NEXT_DATA__" type="application/json">
-      {
-        "props": { "pageProps": {} },
-        "page": "/",
-        "query": {},
-        "buildId": "jk0mtXGn3pWyfGcSbKKQo",
-        "nextExport": true,
-        "autoExport": true,
-        "isFallback": false,
-        "scriptLoader": []
-      }
+    <script>
+      const jsonData = [
+    { "id": 0, "username": "xiaowuc1", "rating": "4 ⭐", "score1": 471, "score2": 356 },
+    { "id": 1, "username": "xiaowuc2", "rating": "3 ⭐", "score1": 420, "score2": 300 },
+    { "id": 2, "username": "xiaowuc3", "rating": "5 ⭐", "score1": 520, "score2": 400 }
+];
+
+// Assuming jsonData is an array of objects representing each row in the table
+
+const tbody = document.querySelector('tbody');
+
+// Clear any existing rows
+tbody.innerHTML = '';
+
+// Iterate through the JSON data and append rows to the tbody
+jsonData.forEach(data => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${data.id}</td><td>${data.username}</td><td>${data.rating}</td><td>${data.score1}</td><td>${data.score2}</td>`;
+    tbody.appendChild(tr);
+});
+
     </script>
   </body>
 </html>
