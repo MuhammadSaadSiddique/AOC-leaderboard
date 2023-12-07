@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "AOC-leaderboard"
+version = "0.2.0"
+description = ""
+authors = ["Muhammad Saad Siddique 8msaad@gmail.com"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.26.0"
+# Pins
+platformdirs = "^2.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-cov = "^3.0.0"
+black = "^22.3.0"
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+mypy = "^0.910"
+poethepoet = "^0.11.0"
+responses = "^0.16.0"
+types-requests = "^2.26.1"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.poe.tasks]
+autoformat.sequence = [
+    {cmd = "black src tests"},
+    {cmd = "isort src tests"},
+]
+
+lint.sequence = [
+    {cmd = "black --check -v src tests"},
+    {cmd = "isort --check -v src tests"},
+    {cmd = "flake8 src tests"},
+    {cmd = "mypy --pretty src tests"},
+]
+
+[tool.poe.tasks.test]
+cmd = "pytest -vv --cov=advent_readme_stars --cov-report term --cov-report xml"
+
+[tool.poe.tasks.test.env]
+INPUT_USERID = "1511815"
+INPUT_LEADERBOARDID = "9995999"
+INPUT_SESSIONCOOKIE = "998877665544332211"
+INPUT_TABLEMARKER = "<!--- advent_readme_stars table --->"
+INPUT_STARSYMBOL = "⭐"
+INPUT_YEAR = "2013"
+INPUT_HEADERPREFIX = "##"
+ADVENT_URL = "http://fake.site.k2bd.dev"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
