@@ -1,5 +1,5 @@
-name: "advent-readme-stars"
-author: k2bd
+name: "AOC-leaderboard"
+author: MuhammadSaadSiddique
 description: >
   Automatically update a README with an up-to-date table of your advent of code
   progress.
@@ -47,7 +47,7 @@ inputs:
   readmeLocation:
     description: Location of the README file
     required: false
-    default: "README.md"
+    default: "index.html"
 branding:
   icon: "star"
   color: "purple"
