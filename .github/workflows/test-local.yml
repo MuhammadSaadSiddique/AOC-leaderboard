@@ -1,0 +1,20 @@
+name: Update README ⭐
+on:
+  schedule:
+    - cron: "1 */12 * * *"  # Every 4 hours
+  workflow_dispatch:
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        with:
+          userId: 1739374
+          leaderboardId: 1739374
+          sessionCookie: ${{ secrets.AOC_SESSION }}
+          year: 2021,2022,2023
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update README stars
+
