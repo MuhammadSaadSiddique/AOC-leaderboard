@@ -12,7 +12,7 @@ SESSION_COOKIE = os.environ.get("INPUT_SESSIONCOOKIE", "")
 LEADERBOARD_ID = os.environ.get("INPUT_LEADERBOARDID", "") or USER_ID
 
 #: Marker in the README to find
-TABLE_MARKER = os.environ.get("INPUT_TABLEMARKER", "<!--- advent_readme_stars table --->")
+TABLE_MARKER = os.environ.get("INPUT_TABLEMARKER", "<!--- AOC-leaderboard table --->")
 
 #: Star symbol to insert in the table
 STAR_SYMBOL = os.environ.get("INPUT_STARSYMBOL", "⭐")

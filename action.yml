@@ -28,7 +28,7 @@ inputs:
       used elsewhere in the README, and which should appear alone on its own
       line.
     required: false
-    default: "<!--- advent_readme_stars table --->"
+    default: "<!--- AOC-leaderboard table --->"
   starSymbol:
     description: Symbol to use in the stars table
     required: false

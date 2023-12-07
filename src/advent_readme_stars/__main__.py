@@ -9,8 +9,8 @@ if __name__ == "__main__":
     # STAR_SYMBOL = "⭐"
     # YEAR="2022"
     import os
-    from advent_readme_stars.constants import README_LOCATION, SESSION_COOKIE,  USER_ID, YEAR, ADVENT_URL,LEADERBOARD_ID,TABLE_MARKER
-    from advent_readme_stars.advent import most_recent_advent_year
+    from AOC-leaderboard.constants import README_LOCATION, SESSION_COOKIE,  USER_ID, YEAR, ADVENT_URL,LEADERBOARD_ID,TABLE_MARKER
+    from AOC-leaderboard.advent import most_recent_advent_year
     # YEAR="2023,2022,2021"
     
     # with open(README_LOCATION, "r") as f:

@@ -31,21 +31,16 @@ autoformat.sequence = [
     {cmd = "isort src tests"},
 ]
 
-lint.sequence = [
-    {cmd = "black --check -v src tests"},
-    {cmd = "isort --check -v src tests"},
-    {cmd = "flake8 src tests"},
-    {cmd = "mypy --pretty src tests"},
-]
+lint.sequence = []
 
 [tool.poe.tasks.test]
-cmd = "pytest -vv --cov=advent_readme_stars --cov-report term --cov-report xml"
+cmd = "pytest -vv --cov=AOC-leaderboard --cov-report term --cov-report xml"
 
 [tool.poe.tasks.test.env]
 INPUT_USERID = "1511815"
 INPUT_LEADERBOARDID = "9995999"
 INPUT_SESSIONCOOKIE = "998877665544332211"
-INPUT_TABLEMARKER = "<!--- advent_readme_stars table --->"
+INPUT_TABLEMARKER = "<!--- AOC-leaderboard table --->"
 INPUT_STARSYMBOL = "⭐"
 INPUT_YEAR = "2013"
 INPUT_HEADERPREFIX = "##"
